@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nutrição Brasil | Links</title>
+  <meta name="description" content="Nutrição Brasil 2026 — O maior evento de nutrição do país. Ingressos, corrida, datas e informações.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --purple-deep: #1A0A2E;
+      --purple-dark: #2D1B4E;
+      --purple-mid: #4A2D7A;
+      --purple-light: #6B3FA0;
+      --purple-accent: #8B5FC7;
+      --purple-glow: #A87BE0;
+      --purple-bright: #C49EFF;
+      --sebrae-blue: #7ABADE;
+      --run-orange: #FF8C42;
+      --run-orange-light: #FFB07A;
+      --white: #FFFFFF;
+      --white-90: rgba(255,255,255,0.9);
+      --white-70: rgba(255,255,255,0.7);
+      --white-50: rgba(255,255,255,0.5);
+      --white-30: rgba(255,255,255,0.3);
+      --white-20: rgba(255,255,255,0.2);
+      --white-10: rgba(255,255,255,0.1);
+      --white-05: rgba(255,255,255,0.05);
+      --whatsapp: #25D366;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--purple-deep);
+      color: var(--white);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: -30%; right: -20%;
+      width: 70%; height: 70%;
+      background: radial-gradient(ellipse, rgba(107, 63, 160, 0.3) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -20%; left: -20%;
+      width: 60%; height: 60%;
+      background: radial-gradient(ellipse, rgba(75, 45, 122, 0.25) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+
+    .container {
+      width: 100%; max-width: 480px;
+      padding: 48px 24px 64px;
+      display: flex; flex-direction: column; align-items: center;
+      position: relative; z-index: 1;
+    }
+
+    /* Logo */
+    .logo-wrapper { margin-bottom: 8px; animation: fadeDown 0.6s ease-out; }
+    .logo-wrapper img { height: 80px; width: auto; object-fit: contain; }
+
+    .tagline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--white-70);
+      margin-bottom: 36px;
+      animation: fadeDown 0.6s ease-out 0.1s both;
+    }
+
+    /* ========== HERO — BRASÍLIA ========== */
+    .hero-card {
+      width: 100%; text-decoration: none; color: var(--white);
+      display: block; position: relative;
+      border-radius: 18px; overflow: hidden;
+      margin-bottom: 16px;
+      animation: heroReveal 0.7s ease-out 0.15s both;
+      cursor: pointer;
+    }
+    .hero-inner {
+      position: relative;
+      padding: 32px 24px 28px;
+      background: linear-gradient(135deg, rgba(139, 95, 199, 0.35) 0%, rgba(75, 45, 122, 0.2) 50%, rgba(26, 10, 46, 0.9) 100%);
+      border: 1px solid rgba(139, 95, 199, 0.4);
+      border-radius: 18px;
+      transition: all 0.35s ease;
+    }
+    .hero-card:hover .hero-inner {
+      border-color: var(--purple-bright);
+      box-shadow: 0 0 0 1px rgba(196, 158, 255, 0.15), 0 16px 48px rgba(139, 95, 199, 0.3), inset 0 1px 0 rgba(255,255,255,0.06);
+      transform: translateY(-3px);
+    }
+    .hero-card:active .hero-inner { transform: translateY(0); }
+    .hero-inner::before {
+      content: '';
+      position: absolute; top: -40%; right: -20%;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(139, 95, 199, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-overline {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 4px; text-transform: uppercase;
+      color: var(--purple-bright);
+      margin-bottom: 14px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .hero-overline .pulse-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--purple-bright);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900; font-size: 26px;
+      line-height: 1.1; letter-spacing: -0.5px;
+      text-transform: uppercase; margin-bottom: 6px;
+    }
+    .hero-title span {
+      display: block; font-size: 15px; font-weight: 700;
+      letter-spacing: 1px; color: var(--white-70);
+      margin-top: 4px; text-transform: none;
+    }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px; font-weight: 600;
+      color: var(--white-90);
+      background: var(--white-10); border: 1px solid var(--white-10);
+      padding: 6px 14px; border-radius: 8px;
+    }
+    .hero-tag svg { width: 14px; height: 14px; stroke: var(--purple-bright); }
+    .hero-cta {
+      margin-top: 20px;
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 0.5px; text-transform: uppercase;
+      color: var(--purple-deep);
+      background: linear-gradient(135deg, var(--purple-bright) 0%, var(--purple-glow) 100%);
+      padding: 12px 28px; border-radius: 10px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(139, 95, 199, 0.3);
+    }
+    .hero-card:hover .hero-cta { box-shadow: 0 6px 28px rgba(139, 95, 199, 0.5); }
+    .hero-cta svg {
+      width: 16px; height: 16px; stroke: var(--purple-deep);
+      transition: transform 0.3s ease;
+    }
+    .hero-card:hover .hero-cta svg { transform: translateX(3px); }
+
+    /* ========== RUN BOX ========== */
+    .run-card {
+      width: 100%; text-decoration: none; color: var(--white);
+      display: block; border-radius: 16px; overflow: hidden;
+      margin-bottom: 32px;
+      animation: fadeUp 0.6s ease-out 0.25s both;
+      cursor: pointer;
+    }
+    .run-inner {
+      position: relative;
+      padding: 22px 24px 20px;
+      background: linear-gradient(135deg, rgba(255, 140, 66, 0.15) 0%, rgba(255, 140, 66, 0.05) 50%, rgba(26, 10, 46, 0.85) 100%);
+      border: 1px solid rgba(255, 140, 66, 0.3);
+      border-radius: 16px;
+      transition: all 0.35s ease;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .run-card:hover .run-inner {
+      border-color: var(--run-orange);
+      box-shadow: 0 12px 40px rgba(255, 140, 66, 0.2);
+      transform: translateY(-2px);
+    }
+    .run-card:active .run-inner { transform: translateY(0); }
+
+    .run-icon-wrap {
+      width: 50px; height: 50px; border-radius: 13px;
+      background: rgba(255, 140, 66, 0.15);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .run-icon-wrap svg { width: 26px; height: 26px; }
+
+    .run-content { flex: 1; }
+    .run-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--run-orange-light); margin-bottom: 4px;
+    }
+    .run-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800; font-size: 17px;
+      line-height: 1.2; color: var(--white);
+    }
+    .run-title em {
+      font-style: italic; font-weight: 700;
+      font-size: 13px; color: var(--white-70);
+      display: block; margin-top: 2px;
+    }
+    .run-meta-row {
+      display: flex; align-items: center; gap: 12px; margin-top: 8px;
+    }
+    .run-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px; font-weight: 700;
+      color: var(--run-orange-light);
+      background: rgba(255, 140, 66, 0.12);
+      padding: 3px 10px; border-radius: 6px;
+    }
+    .run-arrow {
+      color: var(--run-orange); opacity: 0.6;
+      transition: all 0.3s ease; flex-shrink: 0;
+    }
+    .run-card:hover .run-arrow { opacity: 1; transform: translateX(3px); }
+
+    /* ========== SECTIONS ========== */
+    .section {
+      width: 100%; margin-bottom: 28px;
+      animation: fadeUp 0.5s ease-out both;
+    }
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 3.5px; text-transform: uppercase;
+      color: var(--purple-glow);
+      margin-bottom: 14px; padding-left: 4px;
+    }
+
+    .link-list { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+
+    .link-card {
+      display: flex; align-items: center; gap: 14px;
+      padding: 16px 18px;
+      background: var(--white-05);
+      border: 1px solid var(--white-10);
+      border-radius: 14px;
+      text-decoration: none; color: var(--white);
+      transition: all 0.3s ease; cursor: pointer;
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .link-card:hover {
+      background: var(--white-10); border-color: var(--white-20);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(107, 63, 160, 0.2);
+    }
+    .link-card:active { transform: translateY(0); }
+
+    .link-icon {
+      width: 42px; height: 42px; border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; background: var(--white-10);
+    }
+    .link-icon svg { width: 20px; height: 20px; }
+
+    .link-content { flex: 1; min-width: 0; }
+    .link-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700; font-size: 15px; line-height: 1.3;
+    }
+    .link-subtitle {
+      font-size: 12px; color: var(--white-70);
+      margin-top: 2px; line-height: 1.4;
+    }
+    .link-arrow {
+      color: var(--white-50);
+      transition: all 0.3s ease; flex-shrink: 0;
+    }
+    .link-card:hover .link-arrow { color: var(--white-90); transform: translateX(3px); }
+
+    /* Featured — BH */
+    .link-card.featured {
+      background: linear-gradient(135deg, rgba(107, 63, 160, 0.2) 0%, rgba(75, 45, 122, 0.12) 100%);
+      border-color: rgba(139, 95, 199, 0.3);
+    }
+    .link-card.featured .link-icon { background: rgba(139, 95, 199, 0.18); }
+    .link-card.featured:hover { border-color: var(--purple-accent); box-shadow: 0 12px 40px rgba(139, 95, 199, 0.25); }
+    .link-card.featured .link-arrow { color: var(--purple-glow); }
+
+    /* SEBRAE */
+    .link-card.sebrae {
+      background: linear-gradient(135deg, rgba(122, 186, 222, 0.12) 0%, rgba(122, 186, 222, 0.04) 100%);
+      border-color: rgba(122, 186, 222, 0.25);
+    }
+    .link-card.sebrae .link-icon { background: rgba(122, 186, 222, 0.15); }
+    .link-card.sebrae:hover { border-color: var(--sebrae-blue); box-shadow: 0 12px 40px rgba(122, 186, 222, 0.15); }
+    .link-card.sebrae .link-arrow { color: var(--sebrae-blue); }
+    .sebrae-tag {
+      display: inline-flex;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--sebrae-blue);
+      background: rgba(122, 186, 222, 0.12);
+      padding: 3px 8px; border-radius: 4px; margin-top: 5px;
+    }
+
+    /* WhatsApp */
+    .link-card.whatsapp {
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.1) 0%, rgba(37, 211, 102, 0.03) 100%);
+      border-color: rgba(37, 211, 102, 0.2);
+    }
+    .link-card.whatsapp .link-icon { background: rgba(37, 211, 102, 0.12); }
+    .link-card.whatsapp:hover { border-color: rgba(37, 211, 102, 0.5); box-shadow: 0 12px 40px rgba(37, 211, 102, 0.12); }
+    .link-card.whatsapp .link-arrow { color: var(--whatsapp); }
+
+    /* Badges */
+    .date-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px; font-weight: 600;
+      color: var(--purple-glow);
+      background: rgba(139, 95, 199, 0.12);
+      padding: 3px 10px; border-radius: 20px; margin-top: 5px;
+    }
+    .date-badge .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--purple-accent); }
+    .date-badge.tbd { color: var(--white-50); background: var(--white-05); }
+    .date-badge.tbd .dot { background: var(--white-50); }
+
+    .save-the-date-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--purple-bright);
+      background: rgba(196, 158, 255, 0.1);
+      border: 1px solid rgba(196, 158, 255, 0.2);
+      padding: 4px 10px; border-radius: 6px; margin-top: 6px;
+    }
+    .save-the-date-badge svg {
+      width: 12px; height: 12px; stroke: var(--purple-bright);
+    }
+
+    /* Divider */
+    .divider {
+      width: 48px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--purple-accent), transparent);
+      margin: 8px auto 28px; opacity: 0.4;
+    }
+
+    /* Footer */
+    .footer { margin-top: 20px; text-align: center; }
+    .footer-brand {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--white-50); opacity: 0.5;
+    }
+    .footer-url { font-size: 11px; color: var(--white-50); opacity: 0.4; margin-top: 6px; }
+
+    /* Animations */
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heroReveal {
+      from { opacity: 0; transform: translateY(20px) scale(0.98); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(1.4); }
+    }
+
+    .section:nth-of-type(1) { animation-delay: 0.35s; }
+    .section:nth-of-type(2) { animation-delay: 0.45s; }
+    .section:nth-of-type(3) { animation-delay: 0.55s; }
+    .section:nth-of-type(4) { animation-delay: 0.65s; }
+
+    .link-card { animation: fadeUp 0.5s ease-out both; }
+    .link-list .link-card:nth-child(1) { animation-delay: 0.15s; }
+    .link-list .link-card:nth-child(2) { animation-delay: 0.22s; }
+    .link-list .link-card:nth-child(3) { animation-delay: 0.29s; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Logo -->
+    <div class="logo-wrapper">
+      <img src="https://email-editor-production.s3.amazonaws.com/images/222578/nb_Logotipo_05.png" alt="Nutrição Brasil">
+    </div>
+    <p class="tagline">Edições 2026</p>
+
+    <!-- ★ HERO — BRASÍLIA ★ -->
+    <a href="https://www.nutricaobrasil.com.br" target="_blank" rel="noopener" class="hero-card">
+      <div class="hero-inner">
+        <div class="hero-overline">
+          <span class="pulse-dot"></span>
+          Edição Principal
+        </div>
+        <h2 class="hero-title">
+          Brasília — DF
+          <span>27 a 29 de Agosto de 2026</span>
+        </h2>
+        <div class="hero-meta">
+          <div class="hero-tag">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+            3 dias
+          </div>
+          <div class="hero-tag">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
+            Centro de Convenções Ulysses
+          </div>
+        </div>
+        <div class="hero-cta">
+          Garantir Ingresso
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- ★ NB RUN ★ -->
+    <a href="https://www.ticketsports.com.br/e/nutricao-brasil-run-2026-73880" target="_blank" rel="noopener" class="run-card">
+      <div class="run-inner">
+        <div class="run-icon-wrap">
+          <svg fill="none" viewBox="0 0 24 24" stroke="var(--run-orange)" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+          </svg>
+        </div>
+        <div class="run-content">
+          <div class="run-label">Corrida</div>
+          <div class="run-title">
+            NB Run 2026
+            <em>30 de Agosto — Brasília · 5K e 10K</em>
+          </div>
+          <div class="run-meta-row">
+            <span class="run-badge">Inscrições Abertas</span>
+          </div>
+        </div>
+        <svg class="run-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+      </div>
+    </a>
+
+    <!-- SEBRAE/DF -->
+    <div class="section">
+      <div class="section-label">Chamada Pública</div>
+      <div class="link-list">
+        <a href="https://sebrae.nutricaobrasil.com.br/" target="_blank" rel="noopener" class="link-card sebrae">
+          <div class="link-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="var(--sebrae-blue)" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/>
+            </svg>
+          </div>
+          <div class="link-content">
+            <div class="link-title">SEBRAE/DF</div>
+            <div class="link-subtitle">Para pequenos negócios do DF que querem estar ao lado das maiores marcas do setor</div>
+            <div class="sebrae-tag">Inscrições Abertas</div>
+          </div>
+          <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Mais Ingressos -->
+    <div class="section">
+      <div class="section-label">Mais Ingressos</div>
+      <div class="link-list">
+        <a href="https://nutricaobrasil.com.br/belo-horizonte" target="_blank" rel="noopener" class="link-card featured">
+          <div class="link-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"/>
+            </svg>
+          </div>
+          <div class="link-content">
+            <div class="link-title">NB Belo Horizonte</div>
+            <div class="link-subtitle">Ingressos disponíveis</div>
+          </div>
+          <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Próximas Edições -->
+    <div class="section">
+      <div class="section-label">Próximas Edições</div>
+      <div class="link-list">
+
+        <!-- Goiânia — Save the Date -->
+        <a href="https://materiais.scienceplay.com/save-the-date-goiania-2026" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+            </svg>
+          </div>
+          <div class="link-content">
+            <div class="link-title">Goiânia — GO</div>
+            <div class="link-subtitle">Hotel Castro's</div>
+            <div class="date-badge"><span class="dot"></span>07 de Novembro</div>
+            <div class="save-the-date-badge">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+              Save the Date
+            </div>
+          </div>
+          <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+        </a>
+
+        <!-- Porto Alegre — Save the Date -->
+        <a href="https://materiais.scienceplay.com/save-the-date-poa-2026" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+            </svg>
+          </div>
+          <div class="link-content">
+            <div class="link-title">Porto Alegre — RS</div>
+            <div class="link-subtitle">Hotel Deville Prime</div>
+            <div class="date-badge"><span class="dot"></span>14 de Novembro</div>
+            <div class="save-the-date-badge">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+              Save the Date
+            </div>
+          </div>
+          <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+        </a>
+
+        <!-- Belém -->
+        <a href="https://materiais.scienceplay.com/save-the-date-belem-2026" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+            </svg>
+          </div>
+          <div class="link-content">
+            <div class="link-title">Belém — PA</div>
+            <div class="link-subtitle">Data a confirmar</div>
+            <div class="date-badge tbd"><span class="dot"></span>Em breve</div>
+            <div class="save-the-date-badge">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+              Save the Date
+            </div>
+          </div>
+          <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- WhatsApp -->
+    <div class="section">
+      <div class="section-label">Fale Conosco</div>
+      <div class="link-list">
+        <a href="https://wa.me/5561998318817?text=Ol%C3%A1%21%20Quero%20informa%C3%A7%C3%B5es%20sobre%20o%20Nutri%C3%A7%C3%A3o%20Brasil." target="_blank" rel="noopener" class="link-card whatsapp">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="var(--whatsapp)" width="20" height="20">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+          </div>
+          <div class="link-content">
+            <div class="link-title">WhatsApp</div>
+            <div class="link-subtitle">Tire suas dúvidas sobre o evento</div>
+          </div>
+          <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p class="footer-brand">Science Play</p>
+      <p class="footer-url">www.nutricaobrasil.com.br</p>
+    </div>
+
+  </div>
+
+</body>
+</html>
