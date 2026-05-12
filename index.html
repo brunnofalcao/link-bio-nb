@@ -12,13 +12,14 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --purple-deep: #1A0A2E;
-      --purple-dark: #2D1B4E;
-      --purple-mid: #4A2D7A;
-      --purple-light: #6B3FA0;
-      --purple-accent: #8B5FC7;
-      --purple-glow: #A87BE0;
-      --purple-bright: #C49EFF;
+      --bg-base: #0d0618;
+      --bg-elevated: #120822;
+      --purple-dark: #1e0f35;
+      --purple-mid: #3a1f66;
+      --purple-light: #5a3399;
+      --purple-accent: #7B4FBF;
+      --purple-glow: #9B6FDF;
+      --purple-bright: #BFA0F0;
       --sebrae-blue: #7ABADE;
       --run-orange: #FF8C42;
       --run-orange-light: #FFB07A;
@@ -30,12 +31,13 @@
       --white-20: rgba(255,255,255,0.2);
       --white-10: rgba(255,255,255,0.1);
       --white-05: rgba(255,255,255,0.05);
+      --white-03: rgba(255,255,255,0.03);
       --whatsapp: #25D366;
     }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--purple-deep);
+      background: var(--bg-base);
       color: var(--white);
       min-height: 100vh;
       display: flex;
@@ -51,7 +53,7 @@
       position: fixed;
       top: -30%; right: -20%;
       width: 70%; height: 70%;
-      background: radial-gradient(ellipse, rgba(107, 63, 160, 0.3) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(90, 51, 153, 0.2) 0%, transparent 70%);
       pointer-events: none; z-index: 0;
     }
     body::after {
@@ -59,7 +61,7 @@
       position: fixed;
       bottom: -20%; left: -20%;
       width: 60%; height: 60%;
-      background: radial-gradient(ellipse, rgba(75, 45, 122, 0.25) 0%, transparent 70%);
+      background: radial-gradient(ellipse, rgba(58, 31, 102, 0.15) 0%, transparent 70%);
       pointer-events: none; z-index: 0;
     }
 
@@ -78,7 +80,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 12px; font-weight: 500;
       letter-spacing: 3px; text-transform: uppercase;
-      color: var(--white-70);
+      color: var(--white-50);
       margin-bottom: 36px;
       animation: fadeDown 0.6s ease-out 0.1s both;
     }
@@ -95,14 +97,14 @@
     .hero-inner {
       position: relative;
       padding: 32px 24px 28px;
-      background: linear-gradient(135deg, rgba(139, 95, 199, 0.35) 0%, rgba(75, 45, 122, 0.2) 50%, rgba(26, 10, 46, 0.9) 100%);
-      border: 1px solid rgba(139, 95, 199, 0.4);
+      background: linear-gradient(145deg, rgba(123, 79, 191, 0.22) 0%, rgba(58, 31, 102, 0.15) 40%, var(--bg-elevated) 100%);
+      border: 1px solid rgba(123, 79, 191, 0.35);
       border-radius: 18px;
       transition: all 0.35s ease;
     }
     .hero-card:hover .hero-inner {
       border-color: var(--purple-bright);
-      box-shadow: 0 0 0 1px rgba(196, 158, 255, 0.15), 0 16px 48px rgba(139, 95, 199, 0.3), inset 0 1px 0 rgba(255,255,255,0.06);
+      box-shadow: 0 0 0 1px rgba(191, 160, 240, 0.1), 0 16px 48px rgba(123, 79, 191, 0.25);
       transform: translateY(-3px);
     }
     .hero-card:active .hero-inner { transform: translateY(0); }
@@ -110,7 +112,7 @@
       content: '';
       position: absolute; top: -40%; right: -20%;
       width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(139, 95, 199, 0.25) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(123, 79, 191, 0.2) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-overline {
@@ -143,7 +145,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 11px; font-weight: 600;
       color: var(--white-90);
-      background: var(--white-10); border: 1px solid var(--white-10);
+      background: var(--white-05); border: 1px solid var(--white-10);
       padding: 6px 14px; border-radius: 8px;
     }
     .hero-tag svg { width: 14px; height: 14px; stroke: var(--purple-bright); }
@@ -153,15 +155,15 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 13px; font-weight: 700;
       letter-spacing: 0.5px; text-transform: uppercase;
-      color: var(--purple-deep);
+      color: var(--bg-base);
       background: linear-gradient(135deg, var(--purple-bright) 0%, var(--purple-glow) 100%);
       padding: 12px 28px; border-radius: 10px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(139, 95, 199, 0.3);
+      box-shadow: 0 4px 20px rgba(123, 79, 191, 0.3);
     }
-    .hero-card:hover .hero-cta { box-shadow: 0 6px 28px rgba(139, 95, 199, 0.5); }
+    .hero-card:hover .hero-cta { box-shadow: 0 6px 28px rgba(123, 79, 191, 0.5); }
     .hero-cta svg {
-      width: 16px; height: 16px; stroke: var(--purple-deep);
+      width: 16px; height: 16px; stroke: var(--bg-base);
       transition: transform 0.3s ease;
     }
     .hero-card:hover .hero-cta svg { transform: translateX(3px); }
@@ -177,22 +179,22 @@
     .run-inner {
       position: relative;
       padding: 22px 24px 20px;
-      background: linear-gradient(135deg, rgba(255, 140, 66, 0.15) 0%, rgba(255, 140, 66, 0.05) 50%, rgba(26, 10, 46, 0.85) 100%);
-      border: 1px solid rgba(255, 140, 66, 0.3);
+      background: linear-gradient(135deg, rgba(255, 140, 66, 0.1) 0%, rgba(255, 140, 66, 0.03) 50%, var(--bg-elevated) 100%);
+      border: 1px solid rgba(255, 140, 66, 0.25);
       border-radius: 16px;
       transition: all 0.35s ease;
       display: flex; align-items: center; gap: 16px;
     }
     .run-card:hover .run-inner {
       border-color: var(--run-orange);
-      box-shadow: 0 12px 40px rgba(255, 140, 66, 0.2);
+      box-shadow: 0 12px 40px rgba(255, 140, 66, 0.15);
       transform: translateY(-2px);
     }
     .run-card:active .run-inner { transform: translateY(0); }
 
     .run-icon-wrap {
       width: 50px; height: 50px; border-radius: 13px;
-      background: rgba(255, 140, 66, 0.15);
+      background: rgba(255, 140, 66, 0.1);
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
     }
@@ -223,7 +225,7 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 10px; font-weight: 700;
       color: var(--run-orange-light);
-      background: rgba(255, 140, 66, 0.12);
+      background: rgba(255, 140, 66, 0.1);
       padding: 3px 10px; border-radius: 6px;
     }
     .run-arrow {
@@ -250,24 +252,24 @@
     .link-card {
       display: flex; align-items: center; gap: 14px;
       padding: 16px 18px;
-      background: var(--white-05);
-      border: 1px solid var(--white-10);
+      background: var(--white-03);
+      border: 1px solid var(--white-05);
       border-radius: 14px;
       text-decoration: none; color: var(--white);
       transition: all 0.3s ease; cursor: pointer;
       backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     }
     .link-card:hover {
-      background: var(--white-10); border-color: var(--white-20);
+      background: var(--white-05); border-color: var(--white-10);
       transform: translateY(-2px);
-      box-shadow: 0 12px 40px rgba(107, 63, 160, 0.2);
+      box-shadow: 0 12px 40px rgba(90, 51, 153, 0.15);
     }
     .link-card:active { transform: translateY(0); }
 
     .link-icon {
       width: 42px; height: 42px; border-radius: 11px;
       display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; background: var(--white-10);
+      flex-shrink: 0; background: var(--white-05);
     }
     .link-icon svg { width: 20px; height: 20px; }
 
@@ -281,27 +283,27 @@
       margin-top: 2px; line-height: 1.4;
     }
     .link-arrow {
-      color: var(--white-50);
+      color: var(--white-30);
       transition: all 0.3s ease; flex-shrink: 0;
     }
-    .link-card:hover .link-arrow { color: var(--white-90); transform: translateX(3px); }
+    .link-card:hover .link-arrow { color: var(--white-70); transform: translateX(3px); }
 
     /* Featured — BH */
     .link-card.featured {
-      background: linear-gradient(135deg, rgba(107, 63, 160, 0.2) 0%, rgba(75, 45, 122, 0.12) 100%);
-      border-color: rgba(139, 95, 199, 0.3);
+      background: linear-gradient(135deg, rgba(123, 79, 191, 0.12) 0%, rgba(58, 31, 102, 0.08) 100%);
+      border-color: rgba(123, 79, 191, 0.2);
     }
-    .link-card.featured .link-icon { background: rgba(139, 95, 199, 0.18); }
-    .link-card.featured:hover { border-color: var(--purple-accent); box-shadow: 0 12px 40px rgba(139, 95, 199, 0.25); }
+    .link-card.featured .link-icon { background: rgba(123, 79, 191, 0.12); }
+    .link-card.featured:hover { border-color: var(--purple-accent); box-shadow: 0 12px 40px rgba(123, 79, 191, 0.2); }
     .link-card.featured .link-arrow { color: var(--purple-glow); }
 
     /* SEBRAE */
     .link-card.sebrae {
-      background: linear-gradient(135deg, rgba(122, 186, 222, 0.12) 0%, rgba(122, 186, 222, 0.04) 100%);
-      border-color: rgba(122, 186, 222, 0.25);
+      background: linear-gradient(135deg, rgba(122, 186, 222, 0.08) 0%, rgba(122, 186, 222, 0.02) 100%);
+      border-color: rgba(122, 186, 222, 0.18);
     }
-    .link-card.sebrae .link-icon { background: rgba(122, 186, 222, 0.15); }
-    .link-card.sebrae:hover { border-color: var(--sebrae-blue); box-shadow: 0 12px 40px rgba(122, 186, 222, 0.15); }
+    .link-card.sebrae .link-icon { background: rgba(122, 186, 222, 0.1); }
+    .link-card.sebrae:hover { border-color: var(--sebrae-blue); box-shadow: 0 12px 40px rgba(122, 186, 222, 0.12); }
     .link-card.sebrae .link-arrow { color: var(--sebrae-blue); }
     .sebrae-tag {
       display: inline-flex;
@@ -309,17 +311,17 @@
       font-size: 9px; font-weight: 700;
       letter-spacing: 1px; text-transform: uppercase;
       color: var(--sebrae-blue);
-      background: rgba(122, 186, 222, 0.12);
+      background: rgba(122, 186, 222, 0.08);
       padding: 3px 8px; border-radius: 4px; margin-top: 5px;
     }
 
     /* WhatsApp */
     .link-card.whatsapp {
-      background: linear-gradient(135deg, rgba(37, 211, 102, 0.1) 0%, rgba(37, 211, 102, 0.03) 100%);
-      border-color: rgba(37, 211, 102, 0.2);
+      background: linear-gradient(135deg, rgba(37, 211, 102, 0.07) 0%, rgba(37, 211, 102, 0.02) 100%);
+      border-color: rgba(37, 211, 102, 0.15);
     }
-    .link-card.whatsapp .link-icon { background: rgba(37, 211, 102, 0.12); }
-    .link-card.whatsapp:hover { border-color: rgba(37, 211, 102, 0.5); box-shadow: 0 12px 40px rgba(37, 211, 102, 0.12); }
+    .link-card.whatsapp .link-icon { background: rgba(37, 211, 102, 0.08); }
+    .link-card.whatsapp:hover { border-color: rgba(37, 211, 102, 0.4); box-shadow: 0 12px 40px rgba(37, 211, 102, 0.1); }
     .link-card.whatsapp .link-arrow { color: var(--whatsapp); }
 
     /* Badges */
@@ -328,12 +330,10 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 10px; font-weight: 600;
       color: var(--purple-glow);
-      background: rgba(139, 95, 199, 0.12);
+      background: rgba(123, 79, 191, 0.1);
       padding: 3px 10px; border-radius: 20px; margin-top: 5px;
     }
     .date-badge .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--purple-accent); }
-    .date-badge.tbd { color: var(--white-50); background: var(--white-05); }
-    .date-badge.tbd .dot { background: var(--white-50); }
 
     .save-the-date-badge {
       display: inline-flex; align-items: center; gap: 5px;
@@ -341,8 +341,8 @@
       font-size: 9px; font-weight: 700;
       letter-spacing: 1.5px; text-transform: uppercase;
       color: var(--purple-bright);
-      background: rgba(196, 158, 255, 0.1);
-      border: 1px solid rgba(196, 158, 255, 0.2);
+      background: rgba(191, 160, 240, 0.07);
+      border: 1px solid rgba(191, 160, 240, 0.15);
       padding: 4px 10px; border-radius: 6px; margin-top: 6px;
     }
     .save-the-date-badge svg {
@@ -353,7 +353,7 @@
     .divider {
       width: 48px; height: 1px;
       background: linear-gradient(90deg, transparent, var(--purple-accent), transparent);
-      margin: 8px auto 28px; opacity: 0.4;
+      margin: 8px auto 28px; opacity: 0.3;
     }
 
     /* Footer */
@@ -362,9 +362,9 @@
       font-family: 'Montserrat', sans-serif;
       font-size: 10px; font-weight: 600;
       letter-spacing: 2px; text-transform: uppercase;
-      color: var(--white-50); opacity: 0.5;
+      color: var(--white-30);
     }
-    .footer-url { font-size: 11px; color: var(--white-50); opacity: 0.4; margin-top: 6px; }
+    .footer-url { font-size: 11px; color: var(--white-30); margin-top: 6px; }
 
     /* Animations */
     @keyframes fadeDown {
@@ -481,7 +481,7 @@
     <div class="section">
       <div class="section-label">Mais Ingressos</div>
       <div class="link-list">
-        <a href="https://nutricaobrasil.com.br/belo-horizonte" target="_blank" rel="noopener" class="link-card featured">
+        <a href="https://bh.nutricaobrasil.com.br" target="_blank" rel="noopener" class="link-card featured">
           <div class="link-icon">
             <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"/>
@@ -498,12 +498,31 @@
 
     <div class="divider"></div>
 
-    <!-- Próximas Edições -->
+    <!-- Próximas Edições — Belém, Goiânia, Porto Alegre -->
     <div class="section">
       <div class="section-label">Próximas Edições</div>
       <div class="link-list">
 
-        <!-- Goiânia — Save the Date -->
+        <!-- Belém -->
+        <a href="https://materiais.scienceplay.com/save-the-date-belem-2026" target="_blank" rel="noopener" class="link-card">
+          <div class="link-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
+            </svg>
+          </div>
+          <div class="link-content">
+            <div class="link-title">Belém — PA</div>
+            <div class="date-badge"><span class="dot"></span>19 de Setembro</div>
+            <div class="save-the-date-badge">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
+              Save the Date
+            </div>
+          </div>
+          <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+        </a>
+
+        <!-- Goiânia -->
         <a href="https://materiais.scienceplay.com/save-the-date-goiania-2026" target="_blank" rel="noopener" class="link-card">
           <div class="link-icon">
             <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
@@ -523,7 +542,7 @@
           <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
         </a>
 
-        <!-- Porto Alegre — Save the Date -->
+        <!-- Porto Alegre -->
         <a href="https://materiais.scienceplay.com/save-the-date-poa-2026" target="_blank" rel="noopener" class="link-card">
           <div class="link-icon">
             <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
@@ -543,25 +562,6 @@
           <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
         </a>
 
-        <!-- Belém -->
-        <a href="https://materiais.scienceplay.com/save-the-date-belem-2026" target="_blank" rel="noopener" class="link-card">
-          <div class="link-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
-            </svg>
-          </div>
-          <div class="link-content">
-            <div class="link-title">Belém — PA</div>
-            <div class="link-subtitle">Data a confirmar</div>
-            <div class="date-badge tbd"><span class="dot"></span>Em breve</div>
-            <div class="save-the-date-badge">
-              <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
-              Save the Date
-            </div>
-          </div>
-          <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
-        </a>
       </div>
     </div>
 
