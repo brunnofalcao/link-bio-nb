@@ -12,8 +12,8 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg-base: #0d0618;
-      --bg-elevated: #120822;
+      --bg-base: #080014;
+      --bg-elevated: #0f001c;
       --purple-dark: #1e0f35;
       --purple-mid: #3a1f66;
       --purple-light: #5a3399;
@@ -23,6 +23,9 @@
       --sebrae-blue: #7ABADE;
       --run-orange: #FF8C42;
       --run-orange-light: #FFB07A;
+      --hexa-green: #1ea54c;
+      --hexa-green-light: #4ecb7a;
+      --hexa-yellow: #ffd400;
       --white: #FFFFFF;
       --white-90: rgba(255,255,255,0.9);
       --white-70: rgba(255,255,255,0.7);
@@ -167,6 +170,95 @@
       transition: transform 0.3s ease;
     }
     .hero-card:hover .hero-cta svg { transform: translateX(3px); }
+
+    /* ========== HEXA — COPA DO MUNDO ========== */
+    .hexa-card {
+      width: 100%; text-decoration: none; color: var(--white);
+      display: block; border-radius: 16px; overflow: hidden;
+      margin-bottom: 16px;
+      animation: fadeUp 0.6s ease-out 0.2s both;
+      cursor: pointer;
+    }
+    .hexa-inner {
+      position: relative;
+      padding: 22px 24px 20px;
+      background: linear-gradient(135deg, rgba(30, 165, 76, 0.1) 0%, rgba(30, 165, 76, 0.03) 50%, var(--bg-elevated) 100%);
+      border: 1px solid rgba(30, 165, 76, 0.35);
+      border-radius: 16px;
+      transition: all 0.35s ease;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .hexa-card:hover .hexa-inner {
+      border-color: var(--hexa-green-light);
+      box-shadow: 0 12px 40px rgba(30, 165, 76, 0.2);
+      transform: translateY(-2px);
+    }
+    .hexa-card:active .hexa-inner { transform: translateY(0); }
+
+    .hexa-icon-wrap {
+      width: 50px; height: 50px; border-radius: 13px;
+      background: rgba(255, 212, 0, 0.1);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .hexa-icon-wrap svg { width: 26px; height: 26px; }
+
+    .hexa-content { flex: 1; min-width: 0; }
+    .hexa-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: var(--hexa-green-light); margin-bottom: 4px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .hexa-label .pulse-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--hexa-yellow);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .hexa-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800; font-size: 17px;
+      line-height: 1.2; color: var(--white);
+    }
+    .hexa-title em {
+      font-style: italic; font-weight: 700;
+      font-size: 13px; color: var(--white-70);
+      display: block; margin-top: 2px;
+    }
+    .hexa-stars {
+      font-size: 11px; letter-spacing: 2px;
+      color: var(--hexa-yellow); margin-top: 6px;
+      line-height: 1;
+    }
+    .hexa-stars .star-off { color: var(--white-20); }
+    .hexa-meta-row {
+      display: flex; align-items: center; gap: 10px; margin-top: 8px; flex-wrap: wrap;
+    }
+    .hexa-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--hexa-yellow);
+      background: rgba(255, 212, 0, 0.08);
+      border: 1px solid rgba(255, 212, 0, 0.2);
+      padding: 3px 10px; border-radius: 6px;
+    }
+    .hexa-badge-cta {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: var(--bg-base);
+      background: linear-gradient(135deg, var(--hexa-green-light) 0%, var(--hexa-green) 100%);
+      padding: 4px 12px; border-radius: 6px;
+    }
+    .hexa-arrow {
+      color: var(--hexa-green-light); opacity: 0.7;
+      transition: all 0.3s ease; flex-shrink: 0;
+    }
+    .hexa-card:hover .hexa-arrow { opacity: 1; transform: translateX(3px); }
 
     /* ========== RUN BOX ========== */
     .run-card {
@@ -433,6 +525,33 @@
       </div>
     </a>
 
+    <!-- ★ HEXA — COPA DO MUNDO ★ -->
+    <a href="https://regulamentohexanb.vercel.app" target="_blank" rel="noopener" class="hexa-card">
+      <div class="hexa-inner">
+        <div class="hexa-icon-wrap">
+          <svg fill="none" viewBox="0 0 24 24" stroke="var(--hexa-yellow)" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0"/>
+          </svg>
+        </div>
+        <div class="hexa-content">
+          <div class="hexa-label">
+            <span class="pulse-dot"></span>
+            Copa do Mundo
+          </div>
+          <div class="hexa-title">
+            O Hexa é do Brasil
+            <em>A cada gol da Seleção, desconto na sua inscrição</em>
+          </div>
+          <div class="hexa-stars">★ ★ ★ ★ ★ <span class="star-off">★</span></div>
+          <div class="hexa-meta-row">
+            <span class="hexa-badge">Campanha Ativa</span>
+            <span class="hexa-badge-cta">Ver Regulamento</span>
+          </div>
+        </div>
+        <svg class="hexa-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+      </div>
+    </a>
+
     <!-- ★ NB RUN ★ -->
     <a href="https://www.ticketsports.com.br/e/nutricao-brasil-run-2026-73880" target="_blank" rel="noopener" class="run-card">
       <div class="run-inner">
@@ -469,27 +588,6 @@
             <div class="link-title">SEBRAE/DF</div>
             <div class="link-subtitle">Para pequenos negócios do DF que querem estar ao lado das maiores marcas do setor</div>
             <div class="sebrae-tag">Inscrições Abertas</div>
-          </div>
-          <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- Mais Ingressos -->
-    <div class="section">
-      <div class="section-label">Mais Ingressos</div>
-      <div class="link-list">
-        <a href="https://bh.nutricaobrasil.com.br" target="_blank" rel="noopener" class="link-card featured">
-          <div class="link-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"/>
-            </svg>
-          </div>
-          <div class="link-content">
-            <div class="link-title">NB Belo Horizonte</div>
-            <div class="link-subtitle">Ingressos disponíveis</div>
           </div>
           <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
         </a>
