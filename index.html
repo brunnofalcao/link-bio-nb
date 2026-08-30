@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nutrição Brasil | Links</title>
-  <meta name="description" content="Nutrição Brasil 2026 — O maior evento de nutrição do país. Ingressos, corrida, datas e informações.">
+  <meta name="description" content="Nutrição Brasil 2026 — O maior evento de nutrição do país. Ingressos, datas e informações.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -12,17 +12,17 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --bg-base: #080014;
-      --bg-elevated: #0f001c;
+      --bg-base: #0d0618;
+      --bg-elevated: #120822;
       --purple-dark: #1e0f35;
       --purple-mid: #3a1f66;
-      --purple-light: #5a3399;
       --purple-accent: #7B4FBF;
       --purple-glow: #9B6FDF;
       --purple-bright: #BFA0F0;
-      --sebrae-blue: #7ABADE;
-      --run-orange: #FF8C42;
-      --run-orange-light: #FFB07A;
+      --amber: #F59E0B;
+      --amber-light: #FCD34D;
+      --green: #34D399;
+      --green-light: #6EE7B7;
       --white: #FFFFFF;
       --white-90: rgba(255,255,255,0.9);
       --white-70: rgba(255,255,255,0.7);
@@ -85,26 +85,26 @@
       animation: fadeDown 0.6s ease-out 0.1s both;
     }
 
-    /* ========== HERO — BRASÍLIA ========== */
+    /* ========== HERO CARD — BELÉM ========== */
     .hero-card {
       width: 100%; text-decoration: none; color: var(--white);
       display: block; position: relative;
       border-radius: 18px; overflow: hidden;
-      margin-bottom: 16px;
+      margin-bottom: 32px;
       animation: heroReveal 0.7s ease-out 0.15s both;
       cursor: pointer;
     }
     .hero-inner {
       position: relative;
       padding: 32px 24px 28px;
-      background: linear-gradient(145deg, rgba(123, 79, 191, 0.22) 0%, rgba(58, 31, 102, 0.15) 40%, var(--bg-elevated) 100%);
-      border: 1px solid rgba(123, 79, 191, 0.35);
+      background: linear-gradient(145deg, rgba(245, 158, 11, 0.15) 0%, rgba(123, 79, 191, 0.12) 40%, var(--bg-elevated) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.35);
       border-radius: 18px;
       transition: all 0.35s ease;
     }
     .hero-card:hover .hero-inner {
-      border-color: var(--purple-bright);
-      box-shadow: 0 0 0 1px rgba(191, 160, 240, 0.1), 0 16px 48px rgba(123, 79, 191, 0.25);
+      border-color: var(--amber);
+      box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.1), 0 16px 48px rgba(245, 158, 11, 0.15);
       transform: translateY(-3px);
     }
     .hero-card:active .hero-inner { transform: translateY(0); }
@@ -112,21 +112,21 @@
       content: '';
       position: absolute; top: -40%; right: -20%;
       width: 200px; height: 200px;
-      background: radial-gradient(circle, rgba(123, 79, 191, 0.2) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.12) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-overline {
       font-family: 'Montserrat', sans-serif;
       font-size: 9px; font-weight: 700;
       letter-spacing: 4px; text-transform: uppercase;
-      color: var(--purple-bright);
+      color: var(--amber);
       margin-bottom: 14px;
       display: flex; align-items: center; gap: 8px;
     }
     .hero-overline .pulse-dot {
       width: 6px; height: 6px; border-radius: 50%;
-      background: var(--purple-bright);
-      animation: pulse 2s ease-in-out infinite;
+      background: var(--amber);
+      animation: pulse 1.5s ease-in-out infinite;
     }
     .hero-title {
       font-family: 'Montserrat', sans-serif;
@@ -148,7 +148,12 @@
       background: var(--white-05); border: 1px solid var(--white-10);
       padding: 6px 14px; border-radius: 8px;
     }
-    .hero-tag svg { width: 14px; height: 14px; stroke: var(--purple-bright); }
+    .hero-tag svg { width: 14px; height: 14px; stroke: var(--amber); }
+    .hero-tag.urgent {
+      color: var(--amber-light);
+      background: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.25);
+    }
     .hero-cta {
       margin-top: 20px;
       display: inline-flex; align-items: center; gap: 8px;
@@ -156,83 +161,17 @@
       font-size: 13px; font-weight: 700;
       letter-spacing: 0.5px; text-transform: uppercase;
       color: var(--bg-base);
-      background: linear-gradient(135deg, var(--purple-bright) 0%, var(--purple-glow) 100%);
+      background: linear-gradient(135deg, var(--amber-light) 0%, var(--amber) 100%);
       padding: 12px 28px; border-radius: 10px;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 20px rgba(123, 79, 191, 0.3);
+      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.25);
     }
-    .hero-card:hover .hero-cta { box-shadow: 0 6px 28px rgba(123, 79, 191, 0.5); }
+    .hero-card:hover .hero-cta { box-shadow: 0 6px 28px rgba(245, 158, 11, 0.4); }
     .hero-cta svg {
       width: 16px; height: 16px; stroke: var(--bg-base);
       transition: transform 0.3s ease;
     }
     .hero-card:hover .hero-cta svg { transform: translateX(3px); }
-
-    /* ========== RUN BOX ========== */
-    .run-card {
-      width: 100%; text-decoration: none; color: var(--white);
-      display: block; border-radius: 16px; overflow: hidden;
-      margin-bottom: 32px;
-      animation: fadeUp 0.6s ease-out 0.25s both;
-      cursor: pointer;
-    }
-    .run-inner {
-      position: relative;
-      padding: 22px 24px 20px;
-      background: linear-gradient(135deg, rgba(255, 140, 66, 0.1) 0%, rgba(255, 140, 66, 0.03) 50%, var(--bg-elevated) 100%);
-      border: 1px solid rgba(255, 140, 66, 0.25);
-      border-radius: 16px;
-      transition: all 0.35s ease;
-      display: flex; align-items: center; gap: 16px;
-    }
-    .run-card:hover .run-inner {
-      border-color: var(--run-orange);
-      box-shadow: 0 12px 40px rgba(255, 140, 66, 0.15);
-      transform: translateY(-2px);
-    }
-    .run-card:active .run-inner { transform: translateY(0); }
-
-    .run-icon-wrap {
-      width: 50px; height: 50px; border-radius: 13px;
-      background: rgba(255, 140, 66, 0.1);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .run-icon-wrap svg { width: 26px; height: 26px; }
-
-    .run-content { flex: 1; }
-    .run-label {
-      font-family: 'Montserrat', sans-serif;
-      font-size: 9px; font-weight: 700;
-      letter-spacing: 3px; text-transform: uppercase;
-      color: var(--run-orange-light); margin-bottom: 4px;
-    }
-    .run-title {
-      font-family: 'Montserrat', sans-serif;
-      font-weight: 800; font-size: 17px;
-      line-height: 1.2; color: var(--white);
-    }
-    .run-title em {
-      font-style: italic; font-weight: 700;
-      font-size: 13px; color: var(--white-70);
-      display: block; margin-top: 2px;
-    }
-    .run-meta-row {
-      display: flex; align-items: center; gap: 12px; margin-top: 8px;
-    }
-    .run-badge {
-      display: inline-flex; align-items: center; gap: 5px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 10px; font-weight: 700;
-      color: var(--run-orange-light);
-      background: rgba(255, 140, 66, 0.1);
-      padding: 3px 10px; border-radius: 6px;
-    }
-    .run-arrow {
-      color: var(--run-orange); opacity: 0.6;
-      transition: all 0.3s ease; flex-shrink: 0;
-    }
-    .run-card:hover .run-arrow { opacity: 1; transform: translateX(3px); }
 
     /* ========== SECTIONS ========== */
     .section {
@@ -288,32 +227,41 @@
     }
     .link-card:hover .link-arrow { color: var(--white-70); transform: translateX(3px); }
 
-    /* Featured — BH */
-    .link-card.featured {
-      background: linear-gradient(135deg, rgba(123, 79, 191, 0.12) 0%, rgba(58, 31, 102, 0.08) 100%);
-      border-color: rgba(123, 79, 191, 0.2);
+    /* Pré-venda card */
+    .link-card.pre-venda {
+      background: linear-gradient(135deg, rgba(52, 211, 153, 0.08) 0%, rgba(52, 211, 153, 0.02) 100%);
+      border-color: rgba(52, 211, 153, 0.18);
     }
-    .link-card.featured .link-icon { background: rgba(123, 79, 191, 0.12); }
-    .link-card.featured:hover { border-color: var(--purple-accent); box-shadow: 0 12px 40px rgba(123, 79, 191, 0.2); }
-    .link-card.featured .link-arrow { color: var(--purple-glow); }
+    .link-card.pre-venda .link-icon { background: rgba(52, 211, 153, 0.1); }
+    .link-card.pre-venda:hover {
+      border-color: rgba(52, 211, 153, 0.4);
+      box-shadow: 0 12px 40px rgba(52, 211, 153, 0.12);
+    }
+    .link-card.pre-venda .link-arrow { color: var(--green); }
 
-    /* SEBRAE */
-    .link-card.sebrae {
-      background: linear-gradient(135deg, rgba(122, 186, 222, 0.08) 0%, rgba(122, 186, 222, 0.02) 100%);
-      border-color: rgba(122, 186, 222, 0.18);
-    }
-    .link-card.sebrae .link-icon { background: rgba(122, 186, 222, 0.1); }
-    .link-card.sebrae:hover { border-color: var(--sebrae-blue); box-shadow: 0 12px 40px rgba(122, 186, 222, 0.12); }
-    .link-card.sebrae .link-arrow { color: var(--sebrae-blue); }
-    .sebrae-tag {
-      display: inline-flex;
+    .pre-venda-badge {
+      display: inline-flex; align-items: center; gap: 5px;
       font-family: 'Montserrat', sans-serif;
       font-size: 9px; font-weight: 700;
-      letter-spacing: 1px; text-transform: uppercase;
-      color: var(--sebrae-blue);
-      background: rgba(122, 186, 222, 0.08);
-      padding: 3px 8px; border-radius: 4px; margin-top: 5px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--green);
+      background: rgba(52, 211, 153, 0.1);
+      border: 1px solid rgba(52, 211, 153, 0.2);
+      padding: 4px 10px; border-radius: 6px; margin-top: 6px;
     }
+    .pre-venda-badge svg { width: 12px; height: 12px; stroke: var(--green); }
+
+    /* Brasília encerramento */
+    .link-card.brasilia {
+      background: linear-gradient(135deg, rgba(123, 79, 191, 0.08) 0%, rgba(58, 31, 102, 0.04) 100%);
+      border-color: rgba(123, 79, 191, 0.15);
+    }
+    .link-card.brasilia .link-icon { background: rgba(123, 79, 191, 0.1); }
+    .link-card.brasilia:hover {
+      border-color: var(--purple-accent);
+      box-shadow: 0 12px 40px rgba(123, 79, 191, 0.15);
+    }
+    .link-card.brasilia .link-arrow { color: var(--purple-glow); }
 
     /* WhatsApp */
     .link-card.whatsapp {
@@ -324,7 +272,7 @@
     .link-card.whatsapp:hover { border-color: rgba(37, 211, 102, 0.4); box-shadow: 0 12px 40px rgba(37, 211, 102, 0.1); }
     .link-card.whatsapp .link-arrow { color: var(--whatsapp); }
 
-    /* Badges */
+    /* Date badge */
     .date-badge {
       display: inline-flex; align-items: center; gap: 6px;
       font-family: 'Montserrat', sans-serif;
@@ -335,6 +283,7 @@
     }
     .date-badge .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--purple-accent); }
 
+    /* Save the date badge */
     .save-the-date-badge {
       display: inline-flex; align-items: center; gap: 5px;
       font-family: 'Montserrat', sans-serif;
@@ -345,9 +294,7 @@
       border: 1px solid rgba(191, 160, 240, 0.15);
       padding: 4px 10px; border-radius: 6px; margin-top: 6px;
     }
-    .save-the-date-badge svg {
-      width: 12px; height: 12px; stroke: var(--purple-bright);
-    }
+    .save-the-date-badge svg { width: 12px; height: 12px; stroke: var(--purple-bright); }
 
     /* Divider */
     .divider {
@@ -384,10 +331,9 @@
       50% { opacity: 0.5; transform: scale(1.4); }
     }
 
-    .section:nth-of-type(1) { animation-delay: 0.35s; }
-    .section:nth-of-type(2) { animation-delay: 0.45s; }
-    .section:nth-of-type(3) { animation-delay: 0.55s; }
-    .section:nth-of-type(4) { animation-delay: 0.65s; }
+    .section:nth-of-type(1) { animation-delay: 0.3s; }
+    .section:nth-of-type(2) { animation-delay: 0.4s; }
+    .section:nth-of-type(3) { animation-delay: 0.5s; }
 
     .link-card { animation: fadeUp 0.5s ease-out both; }
     .link-list .link-card:nth-child(1) { animation-delay: 0.15s; }
@@ -405,107 +351,43 @@
     </div>
     <p class="tagline">Edições 2026</p>
 
-    <!-- ★ HERO — BRASÍLIA ★ -->
-    <a href="https://www.nutricaobrasil.com.br" target="_blank" rel="noopener" class="hero-card">
+    <!-- ★ HERO — BELÉM — ÚLTIMAS VAGAS ★ -->
+    <a href="https://belem.nutricaobrasil.com.br" target="_blank" rel="noopener" class="hero-card">
       <div class="hero-inner">
         <div class="hero-overline">
           <span class="pulse-dot"></span>
-          Edição Principal
+          Últimas Vagas
         </div>
         <h2 class="hero-title">
-          Brasília — DF
-          <span>27 a 29 de Agosto de 2026</span>
+          Belém — PA
+          <span>19 de Setembro de 2026</span>
         </h2>
         <div class="hero-meta">
           <div class="hero-tag">
-            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
-            3 dias
-          </div>
-          <div class="hero-tag">
             <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>
-            Centro de Convenções Ulysses
+            Hotel Sagres
+          </div>
+          <div class="hero-tag urgent">
+            <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Vagas esgotando
           </div>
         </div>
         <div class="hero-cta">
-          Garantir Ingresso
+          Garantir Vaga
           <svg fill="none" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
         </div>
       </div>
     </a>
 
-    <!-- ★ NB RUN ★ -->
-    <a href="https://www.nutricaobrasil.com.br/corrida" target="_blank" rel="noopener" class="run-card">
-      <div class="run-inner">
-        <div class="run-icon-wrap">
-          <svg fill="none" viewBox="0 0 24 24" stroke="var(--run-orange)" stroke-width="1.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
-          </svg>
-        </div>
-        <div class="run-content">
-          <div class="run-label">Corrida</div>
-          <div class="run-title">
-            NB Run 2026
-            <em>30 de Agosto — Brasília · 5K e 10K</em>
-          </div>
-          <div class="run-meta-row">
-            <span class="run-badge">Inscrições Abertas</span>
-          </div>
-        </div>
-        <svg class="run-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
-      </div>
-    </a>
-
-    <!-- SEBRAE/DF -->
+    <!-- Pré-venda — Goiânia e Porto Alegre -->
     <div class="section">
-      <div class="section-label">Chamada Pública</div>
+      <div class="section-label">Inscrições Abertas</div>
       <div class="link-list">
-        <a href="https://sebrae.nutricaobrasil.com.br/" target="_blank" rel="noopener" class="link-card sebrae">
-          <div class="link-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="var(--sebrae-blue)" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/>
-            </svg>
-          </div>
-          <div class="link-content">
-            <div class="link-title">SEBRAE/DF</div>
-            <div class="link-subtitle">Para pequenos negócios do DF que querem estar ao lado das maiores marcas do setor</div>
-            <div class="sebrae-tag">Inscrições Abertas</div>
-          </div>
-          <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
-        </a>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- Próximas Edições — Belém, Goiânia, Porto Alegre -->
-    <div class="section">
-      <div class="section-label">Próximas Edições</div>
-      <div class="link-list">
-
-        <!-- Belém -->
-        <a href="https://www.nutricaobrasil.com.br/belem" target="_blank" rel="noopener" class="link-card featured">
-          <div class="link-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
-            </svg>
-          </div>
-          <div class="link-content">
-            <div class="link-title">Belém — PA</div>
-            <div class="link-subtitle">Hotel Sagres</div>
-            <div class="date-badge"><span class="dot"></span>19 de Setembro</div>
-            <div class="save-the-date-badge" style="color: var(--purple-bright); background: rgba(123, 79, 191, 0.15); border-color: rgba(123, 79, 191, 0.3);">
-              <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"/></svg>
-              Inscrições Abertas
-            </div>
-          </div>
-          <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
-        </a>
 
         <!-- Goiânia -->
-        <a href="https://materiais.scienceplay.com/save-the-date-goiania-2026" target="_blank" rel="noopener" class="link-card">
+        <a href="https://www.nutricaobrasil.com.br/goiania" target="_blank" rel="noopener" class="link-card pre-venda">
           <div class="link-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
+            <svg fill="none" viewBox="0 0 24 24" stroke="var(--green)" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
             </svg>
@@ -514,18 +396,18 @@
             <div class="link-title">Goiânia — GO</div>
             <div class="link-subtitle">Hotel Castro's</div>
             <div class="date-badge"><span class="dot"></span>07 de Novembro</div>
-            <div class="save-the-date-badge">
-              <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
-              Save the Date
+            <div class="pre-venda-badge">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Pré-venda
             </div>
           </div>
           <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
         </a>
 
         <!-- Porto Alegre -->
-        <a href="https://materiais.scienceplay.com/save-the-date-poa-2026" target="_blank" rel="noopener" class="link-card">
+        <a href="https://www.nutricaobrasil.com.br/portoalegre" target="_blank" rel="noopener" class="link-card pre-venda">
           <div class="link-icon">
-            <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
+            <svg fill="none" viewBox="0 0 24 24" stroke="var(--green)" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/>
               <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/>
             </svg>
@@ -534,10 +416,49 @@
             <div class="link-title">Porto Alegre — RS</div>
             <div class="link-subtitle">Hotel Deville Prime</div>
             <div class="date-badge"><span class="dot"></span>14 de Novembro</div>
-            <div class="save-the-date-badge">
-              <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg>
-              Save the Date
+            <div class="pre-venda-badge">
+              <svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              Pré-venda
             </div>
+          </div>
+          <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+        </a>
+
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Brasília 2026 — Encerramento -->
+    <div class="section">
+      <div class="section-label">Brasília 2026</div>
+      <div class="link-list">
+
+        <!-- Certificado -->
+        <a href="https://checkin.nutricaobrasil.com.br/c" target="_blank" rel="noopener" class="link-card brasilia">
+          <div class="link-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 00-.491 6.347A48.62 48.62 0 0112 20.904a48.62 48.62 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.636 50.636 0 00-2.658-.813A59.906 59.906 0 0112 3.493a59.903 59.903 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/>
+            </svg>
+          </div>
+          <div class="link-content">
+            <div class="link-title">Certificado</div>
+            <div class="link-subtitle">Acesse seu certificado de participação</div>
+          </div>
+          <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
+        </a>
+
+        <!-- Fotos -->
+        <a href="https://banlek.com/album/266c57-nutricao-brasil-2026" target="_blank" rel="noopener" class="link-card brasilia">
+          <div class="link-icon">
+            <svg fill="none" viewBox="0 0 24 24" stroke="var(--purple-glow)" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z"/>
+            </svg>
+          </div>
+          <div class="link-content">
+            <div class="link-title">Fotos do Evento</div>
+            <div class="link-subtitle">Reviva os melhores momentos</div>
           </div>
           <svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>
         </a>
