@@ -15,8 +15,6 @@
 :root {
   --bg-base: #0d0618;
   --bg-elevated: #120822;
-  --purple-dark: #1e0f35;
-  --purple-mid: #3a1f66;
   --purple-accent: #7B4FBF;
   --purple-glow: #9B6FDF;
   --purple-bright: #BFA0F0;
@@ -29,7 +27,6 @@
   --white-70: rgba(255,255,255,0.7);
   --white-50: rgba(255,255,255,0.5);
   --white-30: rgba(255,255,255,0.3);
-  --white-20: rgba(255,255,255,0.2);
   --white-10: rgba(255,255,255,0.1);
   --white-05: rgba(255,255,255,0.05);
   --white-03: rgba(255,255,255,0.03);
@@ -43,24 +40,18 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 0;
   -webkit-font-smoothing: antialiased;
   position: relative;
   overflow-x: hidden;
 }
-
 body::before {
-  content: '';
-  position: fixed;
-  top: -30%; right: -20%;
+  content: ''; position: fixed; top: -30%; right: -20%;
   width: 70%; height: 70%;
   background: radial-gradient(ellipse, rgba(90, 51, 153, 0.2) 0%, transparent 70%);
   pointer-events: none; z-index: 0;
 }
 body::after {
-  content: '';
-  position: fixed;
-  bottom: -20%; left: -20%;
+  content: ''; position: fixed; bottom: -20%; left: -20%;
   width: 60%; height: 60%;
   background: radial-gradient(ellipse, rgba(58, 31, 102, 0.15) 0%, transparent 70%);
   pointer-events: none; z-index: 0;
@@ -85,98 +76,42 @@ body::after {
   animation: fadeDown 0.6s ease-out 0.1s both;
 }
 
-.hero-card {
-  width: 100%; text-decoration: none; color: var(--white);
-  display: block; position: relative;
-  border-radius: 18px; overflow: hidden;
-  margin-bottom: 32px;
-  animation: heroReveal 0.7s ease-out 0.15s both;
-  cursor: pointer;
-}
-.hero-inner {
-  position: relative;
-  padding: 32px 24px 28px;
-  background: linear-gradient(145deg, rgba(52,211,153,.14) 0%, rgba(123,79,191,.12) 40%, var(--bg-elevated) 100%);
-  border: 1px solid rgba(52,211,153,.35);
-  border-radius: 18px;
-  transition: all 0.35s ease;
-}
-.hero-card:hover .hero-inner {
-  border-color: var(--green);
-  box-shadow: 0 0 0 1px rgba(52,211,153,.1), 0 16px 48px rgba(52,211,153,.15);
-  transform: translateY(-3px);
-}
-.hero-card:active .hero-inner { transform: translateY(0); }
-.hero-inner::before {
-  content: '';
-  position: absolute; top: -40%; right: -20%;
-  width: 200px; height: 200px;
-  background: radial-gradient(circle, rgba(52,211,153,.12) 0%, transparent 70%);
-  pointer-events: none;
-}
-.hero-overline {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 9px; font-weight: 700;
-  letter-spacing: 4px; text-transform: uppercase;
-  color: var(--green);
-  margin-bottom: 14px;
-  display: flex; align-items: center; gap: 8px;
-}
-.hero-overline .pulse-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--green);
-  animation: pulse 1.5s ease-in-out infinite;
-}
-.hero-title {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 900; font-size: 26px;
-  line-height: 1.1; letter-spacing: -0.5px;
-  text-transform: uppercase; margin-bottom: 6px;
-}
-.hero-title span {
-  display: block; font-size: 15px; font-weight: 700;
-  letter-spacing: 1px; color: var(--white-70);
-  margin-top: 4px; text-transform: none;
-}
-.hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
-.hero-tag {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 11px; font-weight: 600;
-  color: var(--white-90);
-  background: var(--white-05); border: 1px solid var(--white-10);
-  padding: 6px 14px; border-radius: 8px;
-}
-.hero-tag svg { width: 14px; height: 14px; stroke: var(--green); }
-.hero-tag.urgent {
-  color: var(--amber-light);
-  background: rgba(245,158,11,.12);
-  border-color: rgba(245,158,11,.3);
-}
-.hero-tag.urgent svg { stroke: var(--amber); }
-.hero-cta {
-  margin-top: 20px;
-  display: inline-flex; align-items: center; gap: 8px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 13px; font-weight: 700;
-  letter-spacing: 0.5px; text-transform: uppercase;
-  color: var(--bg-base);
-  background: linear-gradient(135deg, var(--green-light) 0%, var(--green) 100%);
-  padding: 12px 28px; border-radius: 10px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(52,211,153,.25);
-}
-.hero-card:hover .hero-cta { box-shadow: 0 6px 28px rgba(52,211,153,.4); }
-.hero-cta svg {
-  width: 16px; height: 16px; stroke: var(--bg-base);
-  transition: transform 0.3s ease;
-}
-.hero-card:hover .hero-cta svg { transform: translateX(3px); }
+.duo { width:100%; display:grid; grid-template-columns:1fr; gap:14px; margin-bottom:32px; }
+.city-card { text-decoration:none; color:var(--white); display:block; position:relative;
+  border-radius:18px; overflow:hidden; cursor:pointer; animation: heroReveal .7s ease-out both; }
+.city-card:nth-child(1){ animation-delay:.15s } .city-card:nth-child(2){ animation-delay:.25s }
+.city-inner { position:relative; padding:26px 22px 24px;
+  background:linear-gradient(145deg, rgba(52,211,153,.13) 0%, rgba(123,79,191,.12) 42%, var(--bg-elevated) 100%);
+  border:1px solid rgba(52,211,153,.32); border-radius:18px; transition:all .35s ease; }
+.city-card:hover .city-inner { border-color:var(--green); transform:translateY(-3px);
+  box-shadow:0 0 0 1px rgba(52,211,153,.1), 0 16px 48px rgba(52,211,153,.15); }
+.city-card:active .city-inner { transform:translateY(0) }
+.city-inner::before { content:''; position:absolute; top:-40%; right:-20%; width:180px; height:180px;
+  background:radial-gradient(circle, rgba(52,211,153,.12) 0%, transparent 70%); pointer-events:none; }
+.city-over { font-family:'Montserrat',sans-serif; font-size:9px; font-weight:700; letter-spacing:4px;
+  text-transform:uppercase; color:var(--green); margin-bottom:12px; display:flex; align-items:center; gap:8px; }
+.city-over .pulse-dot { width:6px; height:6px; border-radius:50%; background:var(--green); animation:pulse 1.5s ease-in-out infinite; }
+.city-name { font-family:'Montserrat',sans-serif; font-weight:900; font-size:24px; line-height:1.1;
+  letter-spacing:-.5px; text-transform:uppercase; }
+.city-date { display:block; font-family:'Montserrat',sans-serif; font-size:14px; font-weight:700;
+  letter-spacing:.5px; color:var(--white-70); margin-top:5px; text-transform:none; }
+.city-meta { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+.city-tag { display:inline-flex; align-items:center; gap:6px; font-family:'Montserrat',sans-serif;
+  font-size:11px; font-weight:600; color:var(--white-90); background:var(--white-05);
+  border:1px solid var(--white-10); padding:6px 13px; border-radius:8px; }
+.city-tag svg { width:14px; height:14px; stroke:var(--green) }
+.city-tag.urgent { color:var(--amber-light); background:rgba(245,158,11,.12); border-color:rgba(245,158,11,.3) }
+.city-tag.urgent svg { stroke:var(--amber) }
+.city-cta { margin-top:18px; display:flex; align-items:center; justify-content:center; gap:8px;
+  font-family:'Montserrat',sans-serif; font-size:13px; font-weight:700; letter-spacing:.5px;
+  text-transform:uppercase; color:var(--bg-base);
+  background:linear-gradient(135deg,var(--green-light) 0%,var(--green) 100%);
+  padding:13px 24px; border-radius:10px; transition:all .3s ease; box-shadow:0 4px 20px rgba(52,211,153,.25); }
+.city-card:hover .city-cta { box-shadow:0 6px 28px rgba(52,211,153,.4) }
+.city-cta svg { width:16px; height:16px; stroke:var(--bg-base); transition:transform .3s ease }
+.city-card:hover .city-cta svg { transform:translateX(3px) }
 
-.section {
-  width: 100%; margin-bottom: 28px;
-  animation: fadeUp 0.5s ease-out both;
-}
+.section { width: 100%; margin-bottom: 28px; animation: fadeUp 0.5s ease-out both; }
 .section-label {
   font-family: 'Montserrat', sans-serif;
   font-size: 10px; font-weight: 700;
@@ -210,54 +145,18 @@ body::after {
   flex-shrink: 0; background: var(--white-05);
 }
 .link-icon svg { width: 20px; height: 20px; }
-
 .link-content { flex: 1; min-width: 0; }
-.link-title {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700; font-size: 15px; line-height: 1.3;
-}
-.link-subtitle {
-  font-size: 12px; color: var(--white-70);
-  margin-top: 2px; line-height: 1.4;
-}
-.link-arrow {
-  color: var(--white-30);
-  transition: all 0.3s ease; flex-shrink: 0;
-}
+.link-title { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 15px; line-height: 1.3; }
+.link-subtitle { font-size: 12px; color: var(--white-70); margin-top: 2px; line-height: 1.4; }
+.link-arrow { color: var(--white-30); transition: all 0.3s ease; flex-shrink: 0; }
 .link-card:hover .link-arrow { color: var(--white-70); transform: translateX(3px); }
-
-.link-card.pre-venda {
-  background: linear-gradient(135deg, rgba(52, 211, 153, 0.08) 0%, rgba(52, 211, 153, 0.02) 100%);
-  border-color: rgba(52, 211, 153, 0.18);
-}
-.link-card.pre-venda .link-icon { background: rgba(52, 211, 153, 0.1); }
-.link-card.pre-venda:hover {
-  border-color: rgba(52, 211, 153, 0.4);
-  box-shadow: 0 12px 40px rgba(52, 211, 153, 0.12);
-}
-.link-card.pre-venda .link-arrow { color: var(--green); }
-
-.pre-venda-badge {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 9px; font-weight: 700;
-  letter-spacing: 1.5px; text-transform: uppercase;
-  color: var(--green);
-  background: rgba(52, 211, 153, 0.1);
-  border: 1px solid rgba(52, 211, 153, 0.2);
-  padding: 4px 10px; border-radius: 6px; margin-top: 6px;
-}
-.pre-venda-badge svg { width: 12px; height: 12px; stroke: var(--green); }
 
 .link-card.brasilia {
   background: linear-gradient(135deg, rgba(123, 79, 191, 0.08) 0%, rgba(58, 31, 102, 0.04) 100%);
   border-color: rgba(123, 79, 191, 0.15);
 }
 .link-card.brasilia .link-icon { background: rgba(123, 79, 191, 0.1); }
-.link-card.brasilia:hover {
-  border-color: var(--purple-accent);
-  box-shadow: 0 12px 40px rgba(123, 79, 191, 0.15);
-}
+.link-card.brasilia:hover { border-color: var(--purple-accent); box-shadow: 0 12px 40px rgba(123, 79, 191, 0.15); }
 .link-card.brasilia .link-arrow { color: var(--purple-glow); }
 
 .link-card.whatsapp {
@@ -267,16 +166,6 @@ body::after {
 .link-card.whatsapp .link-icon { background: rgba(37, 211, 102, 0.08); }
 .link-card.whatsapp:hover { border-color: rgba(37, 211, 102, 0.4); box-shadow: 0 12px 40px rgba(37, 211, 102, 0.1); }
 .link-card.whatsapp .link-arrow { color: var(--whatsapp); }
-
-.date-badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px; font-weight: 600;
-  color: var(--purple-glow);
-  background: rgba(123, 79, 191, 0.1);
-  padding: 3px 10px; border-radius: 20px; margin-top: 5px;
-}
-.date-badge .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--purple-accent); }
 
 .save-the-date-badge {
   display: inline-flex; align-items: center; gap: 5px;
@@ -305,31 +194,17 @@ body::after {
 }
 .footer-url { font-size: 11px; color: var(--white-30); margin-top: 6px; }
 
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-12px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes heroReveal {
-  from { opacity: 0; transform: translateY(20px) scale(0.98); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.4); }
-}
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-12px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes heroReveal { from { opacity: 0; transform: translateY(20px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.4); } }
 
 .section:nth-of-type(1) { animation-delay: 0.3s; }
 .section:nth-of-type(2) { animation-delay: 0.4s; }
 .section:nth-of-type(3) { animation-delay: 0.5s; }
-
 .link-card { animation: fadeUp 0.5s ease-out both; }
 .link-list .link-card:nth-child(1) { animation-delay: 0.15s; }
 .link-list .link-card:nth-child(2) { animation-delay: 0.22s; }
-.link-list .link-card:nth-child(3) { animation-delay: 0.29s; }
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y2HLCV0V0"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-8Y2HLCV0V0');</script>
@@ -340,30 +215,33 @@ body::after {
 <div class="container">
 
 <div class="logo-wrapper"><img src="https://res.cloudinary.com/dlzrfhwin/image/upload/f_auto,q_auto,w_400/v1775583229/nb_logotipo_hor_05_wqsydv.png" alt="Nutrição Brasil"></div>
-<p class="tagline">As últimas de 2026</p>
+<p class="tagline">As duas últimas de 2026</p>
 
-<a href="https://www.nutricaobrasil.com.br/goiania?utm_source=instagram&utm_medium=bio&utm_campaign=nb-2026&utm_content=hero-goiania" target="_blank" rel="noopener" class="hero-card">
-<div class="hero-inner">
-<div class="hero-overline"><span class="pulse-dot"></span>Inscrições abertas</div>
-<h2 class="hero-title">Goiânia · GO<span>7 de novembro de 2026, sábado</span></h2>
-<div class="hero-meta">
-<div class="hero-tag"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>Hotel Castro's</div>
-<div class="hero-tag urgent"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Lote atual até 19 de outubro</div>
+<div class="duo">
+
+<a href="https://www.nutricaobrasil.com.br/goiania?utm_source=instagram&utm_medium=bio&utm_campaign=nb-2026&utm_content=goiania" target="_blank" rel="noopener" class="city-card">
+<div class="city-inner">
+<div class="city-over"><span class="pulse-dot"></span>Inscrições abertas</div>
+<div class="city-name">Goiânia · GO<span class="city-date">7 de novembro de 2026, sábado</span></div>
+<div class="city-meta">
+<div class="city-tag"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>Hotel Castro's</div>
+<div class="city-tag urgent"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Lote atual até 19 de outubro</div>
 </div>
-<div class="hero-cta">Garantir vaga<svg fill="none" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></div>
+<div class="city-cta">Garantir vaga<svg fill="none" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></div>
 </div></a>
 
-<div class="section">
-<div class="section-label">Última edição de 2026</div>
-<div class="link-list">
-<a href="https://www.nutricaobrasil.com.br/portoalegre?utm_source=instagram&utm_medium=bio&utm_campaign=nb-2026&utm_content=portoalegre" target="_blank" rel="noopener" class="link-card pre-venda">
-<div class="link-icon"><svg fill="none" viewBox="0 0 24 24" stroke="var(--green)" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg></div>
-<div class="link-content"><div class="link-title">Porto Alegre · RS</div><div class="link-subtitle">Hotel Deville Prime</div>
-<div class="date-badge"><span class="dot"></span>14 de novembro</div>
-<div class="pre-venda-badge"><svg fill="none" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Inscrições abertas</div></div><svg class="link-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg></a>
-</div></div>
+<a href="https://www.nutricaobrasil.com.br/portoalegre?utm_source=instagram&utm_medium=bio&utm_campaign=nb-2026&utm_content=portoalegre" target="_blank" rel="noopener" class="city-card">
+<div class="city-inner">
+<div class="city-over"><span class="pulse-dot"></span>Inscrições abertas</div>
+<div class="city-name">Porto Alegre · RS<span class="city-date">14 de novembro de 2026, sábado</span></div>
+<div class="city-meta">
+<div class="city-tag"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"/></svg>Hotel Deville Prime</div>
+<div class="city-tag urgent"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>Lote atual até 19 de outubro</div>
+</div>
+<div class="city-cta">Garantir vaga<svg fill="none" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg></div>
+</div></a>
 
-<div class="divider"></div>
+</div>
 
 <div class="section">
 <div class="section-label">Calendário 2027</div>
